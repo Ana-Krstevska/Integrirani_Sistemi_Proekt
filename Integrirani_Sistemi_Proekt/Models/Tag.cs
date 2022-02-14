@@ -11,10 +11,15 @@ namespace Integrirani_Sistemi_Proekt.Models
     {
         [Key]
         public int Id { get; set; }
+
         public string Season { get; set; }
 
         public ClothingPiece ClothingPiece { get; set; }
         
         public string Fabric { get; set; }
+
+        //Relationships
+
+        public List<Tag_Clothing> Tag_Clothings { get; set; }
     }
 }

@@ -15,5 +15,9 @@ namespace Integrirani_Sistemi_Proekt.Models
         public string Name { get; set; }
 
         public string Bio { get; set; }
+
+        //Relationships
+
+        public List<Clothing> Clothings { get; set; }
     }
 }
