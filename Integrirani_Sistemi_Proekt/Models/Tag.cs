@@ -13,12 +13,15 @@ namespace Integrirani_Sistemi_Proekt.Models
         public int Id { get; set; }
 
         [Display(Name = "Season")]
+        [Required(ErrorMessage = "Season is required")]
         public string Season { get; set; }
 
         [Display(Name = "Clothing Piece")]
+        [Required(ErrorMessage ="Clothing Piece is required")]
         public ClothingPiece ClothingPiece { get; set; }
 
         [Display(Name = "Fabric")]
+        [Required(ErrorMessage = "Fabric is required")]
         public string Fabric { get; set; }
 
         //Relationships
