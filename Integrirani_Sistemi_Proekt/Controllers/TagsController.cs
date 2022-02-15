@@ -24,7 +24,7 @@ namespace Integrirani_Sistemi_Proekt.Controllers
             return View(data);
         }
 
-        //Get: Actors/Create
+        //Get: Tags/Create
         public IActionResult Create()
         {
             return View();
@@ -42,7 +42,7 @@ namespace Integrirani_Sistemi_Proekt.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //Get: Actors/Details/1
+        //Get: Tags/Details/1
         public async Task<IActionResult> Details(int id)
         {
             var tagDetails = await _service.GetByIdAsync(id);
@@ -52,7 +52,7 @@ namespace Integrirani_Sistemi_Proekt.Controllers
             return View(tagDetails);
         }
 
-        //Get: Actors/Edit/1
+        //Get: Tags/Edit/1
         public async Task<IActionResult> Edit(int id)
         {
             var tagDetails = await _service.GetByIdAsync(id);
@@ -74,7 +74,7 @@ namespace Integrirani_Sistemi_Proekt.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //Get: Actors/Delete/1
+        //Get: Tags/Delete/1
         public async Task<IActionResult> Delete(int id)
         {
             var tagDetails = await _service.GetByIdAsync(id);

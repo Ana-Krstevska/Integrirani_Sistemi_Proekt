@@ -31,6 +31,8 @@ namespace Integrirani_Sistemi_Proekt
 
             //Services configuration
             services.AddScoped<ITagsService, TagsService>();
+            services.AddScoped<IBrandsService, BrandsService>();
+            services.AddScoped<IShopsService, ShopsService>();
 
             services.AddControllersWithViews();
         }

@@ -12,12 +12,15 @@ namespace Integrirani_Sistemi_Proekt.Models
         public int Id { get; set; }
 
         [Display(Name = "Logo")]
+        [Required(ErrorMessage = "Logo URL is required")]
         public string ProfilePictureUrl { get; set; }
 
         [Display(Name = "Name")]
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
         [Display(Name = "Bio")]
+        [Required(ErrorMessage = "Bio is required")]
         public string Bio { get; set; }
 
         //Relationships
