@@ -12,10 +12,13 @@ namespace Integrirani_Sistemi_Proekt.Models
         [Key]
         public int Id { get; set; }
 
+        [Display(Name = "Season")]
         public string Season { get; set; }
 
+        [Display(Name = "Clothing Piece")]
         public ClothingPiece ClothingPiece { get; set; }
-        
+
+        [Display(Name = "Fabric")]
         public string Fabric { get; set; }
 
         //Relationships

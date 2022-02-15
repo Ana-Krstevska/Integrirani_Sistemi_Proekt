@@ -10,10 +10,14 @@ namespace Integrirani_Sistemi_Proekt.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Display(Name = "Logo")]
         public string ProfilePictureUrl { get; set; }
 
+        [Display(Name = "Name")]
         public string Name { get; set; }
 
+        [Display(Name = "Bio")]
         public string Bio { get; set; }
 
         //Relationships

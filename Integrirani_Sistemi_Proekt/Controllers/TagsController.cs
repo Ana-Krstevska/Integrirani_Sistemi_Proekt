@@ -19,7 +19,7 @@ namespace Integrirani_Sistemi_Proekt.Controllers
         public IActionResult Index()
         {
             var data = _context.Tags.ToList();
-            return View();
+            return View(data);
         }
     }
 }

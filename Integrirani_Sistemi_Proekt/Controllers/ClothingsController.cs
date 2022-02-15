@@ -19,8 +19,8 @@ namespace Integrirani_Sistemi_Proekt.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var allClothings = await _context.Clothings.ToListAsync();
-            return View();
+            var allClothings = await _context.Clothings.Include(n => n.Shop).Include(n => n.Brand).OrderBy(n => n.Name).ToListAsync();
+            return View(allClothings);
         }
     }
 }

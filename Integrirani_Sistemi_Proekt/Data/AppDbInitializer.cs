@@ -141,7 +141,7 @@ namespace Integrirani_Sistemi_Proekt.Data
 
                         new Brand()
                         {
-                            Name = "New Yourker",
+                            Name = "New Yorker",
                             ProfilePictureUrl = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.tlQER4xA7G9c4Icy4qew8QHaDF%26pid%3DApi&f=1",
                             Bio = "Prodavnica so moderni parcinja alista"
                         },

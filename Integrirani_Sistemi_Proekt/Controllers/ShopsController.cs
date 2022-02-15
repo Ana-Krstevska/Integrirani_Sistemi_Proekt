@@ -19,7 +19,7 @@ namespace Integrirani_Sistemi_Proekt.Controllers
         public async Task<IActionResult> Index()
         {
             var allShops = await _context.Shops.ToListAsync();
-            return View();
+            return View(allShops);
         }
     }
 }
