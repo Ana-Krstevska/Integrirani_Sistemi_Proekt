@@ -33,6 +33,7 @@ namespace Integrirani_Sistemi_Proekt
             services.AddScoped<ITagsService, TagsService>();
             services.AddScoped<IBrandsService, BrandsService>();
             services.AddScoped<IShopsService, ShopsService>();
+            services.AddScoped<IClothingsService, ClothingsService>();
 
             services.AddControllersWithViews();
         }
