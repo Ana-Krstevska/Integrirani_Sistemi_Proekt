@@ -31,7 +31,7 @@ namespace Integrirani_Sistemi_Proekt.Data.Services
 
         public async Task<IEnumerable<Clothing>> GetAllAsync()
         {
-            var result =await _context.Clothings.ToListAsync();
+            var result =await _context.Clothings.Include(n => n.Shop).Include(n => n.Brand).OrderBy(n => n.Name).ToListAsync();
             return result;
         }
 

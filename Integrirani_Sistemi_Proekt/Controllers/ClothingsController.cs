@@ -32,7 +32,7 @@ namespace Integrirani_Sistemi_Proekt.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Name,Description,Price,ImageUrl,StartDate,EndDate,AmountXS,AmountS,AmountM,AmoutnL,AmountXL,Brand,Shop")] Clothing clothing)
+        public async Task<IActionResult> Create([Bind("Name,Description,Price,ImageUrl,StartDate,EndDate,AmountXS,AmountS,AmountM,AmoutnL,AmountXL,BrandId,ShopId")] Clothing clothing)
         {
             if (!ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace Integrirani_Sistemi_Proekt.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Price,ImageUrl,StartDate,EndDate,AmountXS,AmountS,AmountM,AmoutnL,AmountXL,Brand,Shop")] Clothing clothing)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Price,ImageUrl,StartDate,EndDate,AmountXS,AmountS,AmountM,AmoutnL,AmountXL,BrandId,ShopId")] Clothing clothing)
         {
             if (!ModelState.IsValid)
             {
