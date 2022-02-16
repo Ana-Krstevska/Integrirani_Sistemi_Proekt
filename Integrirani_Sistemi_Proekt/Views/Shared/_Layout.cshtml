@@ -19,20 +19,20 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                       <li class="nav-item">
-                           <a class="nav-link text-dark" asp-controller="Clothings" asp-action="Index"><i class="badge-info bi-clothes"></i>Clothing</a>
-                       </li>
-                       <li class="nav-item dropdown">
-                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                               <i class="bi bi-gear"></i> More
-                           </a>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Clothings" asp-action="Index"><i class="badge-info bi-clothes"></i>Clothing</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bi bi-gear"></i> More
+                            </a>
 
-                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                               <a class="dropdown-item" asp-controller="Brands" asp-action="Index">Brands</a>
-                               <a class="dropdown-item" asp-controller="Shops" asp-action="Index"> Shops</a>
-                               <a class="dropdown-item" asp-controller="Tags" asp-action="Index"> Tags</a>
-                           </div>
-                       </li>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-controller="Brands" asp-action="Index">Brands</a>
+                                <a class="dropdown-item" asp-controller="Shops" asp-action="Index"> Shops</a>
+                                <a class="dropdown-item" asp-controller="Tags" asp-action="Index"> Tags</a>
+                            </div>
+                        </li>
                     </ul>
 
                     <form class="form-inline my-2 my-lg-0" asp-controller="Clothings" asp-action="Filter" style="padding-right: 25px;">
@@ -40,6 +40,7 @@
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
                     </form>
 
+                    <partial name="Identity.cshtml" />
                 </div>
             </div>
         </nav>

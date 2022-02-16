@@ -1,8 +1,13 @@
 using Integrirani_Sistemi_Proekt.Data;
+using Integrirani_Sistemi_Proekt.Data.Cart;
 using Integrirani_Sistemi_Proekt.Data.Services;
+using Integrirani_Sistemi_Proekt.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,7 +39,23 @@ namespace Integrirani_Sistemi_Proekt
             services.AddScoped<IBrandsService, BrandsService>();
             services.AddScoped<IShopsService, ShopsService>();
             services.AddScoped<IClothingsService, ClothingsService>();
+            services.AddScoped<IOrdersService, OrdersService>();
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddMemoryCache();
+            services.AddSession();
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            });
+
+                   
+
+            
+            
             services.AddControllersWithViews();
         }
 
@@ -55,7 +76,8 @@ namespace Integrirani_Sistemi_Proekt
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseSession();
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
