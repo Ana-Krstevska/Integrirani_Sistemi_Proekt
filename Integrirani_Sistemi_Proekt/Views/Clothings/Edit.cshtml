@@ -1,0 +1,109 @@
+﻿@model Clothing
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Update @Model.Name</h1>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group text-center">
+                        <img id="ProfilePicturePreview" class="border-info" style="max-width: 150px" />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ImageUrl" class="control-label"></label>
+                        <input asp-for="ImageUrl" class="form-control" />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="StartDate" class="control-label"></label>
+                        <input asp-for="StartDate" class="form-control" />
+                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EndDate" class="control-label"></label>
+                        <input asp-for="EndDate" class="form-control" />
+                        <span asp-validation-for="EndDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AmountXS" class="control-label"></label>
+                        <input asp-for="AmountXS" class="form-control" />
+                        <span asp-validation-for="AmountXS" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AmountS" class="control-label"></label>
+                        <input asp-for="AmountS" class="form-control" />
+                        <span asp-validation-for="AmountS" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AmountM" class="control-label"></label>
+                        <input asp-for="AmountM" class="form-control" />
+                        <span asp-validation-for="AmountM" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AmountL" class="control-label"></label>
+                        <input asp-for="AmountL" class="form-control" />
+                        <span asp-validation-for="AmountL" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AmountXL" class="control-label"></label>
+                        <input asp-for="AmountXL" class="form-control" />
+                        <span asp-validation-for="AmountXL" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BrandId" class="control-label"></label>
+                        <input asp-for="BrandId" class="form-control" />
+                        <span asp-validation-for="BrandId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ShopId" class="control-label"></label>
+                        <input asp-for="ShopId" class="form-control" />
+                        <span asp-validation-for="ShopId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Update" class="btn btn-outline-success float-right" />
+                        <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                        <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            var output = document.getElementById('ProfilePicturePreview');
+            output.src = $("#ImageUrl").val();
+        })
+        $("#ImageUrl").on("change", function () {
+            var output = document.getElementById('ProfilePicturePreview');
+            output.src = $(this).val();
+        })
+    </script>
+}
