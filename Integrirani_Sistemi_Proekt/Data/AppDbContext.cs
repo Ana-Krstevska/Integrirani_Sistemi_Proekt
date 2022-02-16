@@ -1,4 +1,6 @@
 ﻿using Integrirani_Sistemi_Proekt.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Integrirani_Sistemi_Proekt.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -38,5 +40,14 @@ namespace Integrirani_Sistemi_Proekt.Data
         public DbSet<Shop> Shops { get; set; }
 
         public DbSet<Brand> Brands { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderItem> OrderItems { get; set; }
+
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+
+        public DbSet<ApplicationUser> AspNetUsers { get; set; }
+
     }
 }
